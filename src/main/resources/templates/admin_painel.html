@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — PAINEL DE ADMINISTRAÇÃO (Área Restrita)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+    
+    :root {
+        --bg-color: #000000;
+        --panel-bg: #111111;
+        --border-color: #333333;
+        --accent1: #ff00ff; 
+        --accent2: #00ffcc; 
+        --text-primary: #ffffff;
+        --font-title: 'Orbitron', sans-serif;
+        --font-body: 'Rajdhani', sans-serif; 
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-body), sans-serif;
+        padding: 40px;
+    }
+    
+    
+    .admin-header {
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--accent2);
+        padding-bottom: 20px;
+    }
+
+    .admin-header h1 {
+        font-family: var(--font-title);
+        color: var(--accent1);
+        font-size: 2.5rem;
+    }
+
+    
+    .logout-button {
+        padding: 8px 15px;
+        background-color: transparent;
+        border: 1px solid var(--accent1);
+        color: var(--accent1);
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-weight: 600;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .logout-button:hover {
+        background-color: var(--accent1);
+        color: var(--bg-color);
+    }
+    
+    /* Container Principal */
+    .admin-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: var(--panel-bg);
+        border: 1px solid var(--border-color);
+    }
+
+    .action-bar {
+        margin-bottom: 20px;
+        text-align: right;
+    }
+
+    /* Tabela CRUD (LISTAGEM) */
+    .crud-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: monospace; 
+        font-size: 0.9rem;
+    }
+
+    .crud-table th, .crud-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .crud-table th {
+        background-color: #0a0a0a;
+        color: var(--accent2);
+        text-transform: uppercase;
+        font-family: var(--font-title);
+        font-weight: 400;
+    }
+
+    .crud-table td {
+        color: var(--text-primary);
+    }
+
+    
+    .action-button {
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: 1px solid;
+        cursor: pointer;
+        background: transparent;
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-weight: 600;
+    }
+
+    .edit-button { border-color: var(--accent2); color: var(--accent2); }
+    .delete-button { border-color: var(--accent1); color: var(--accent1); }
+    
+    .edit-button:hover { background-color: var(--accent2); color: var(--bg-color); }
+    .delete-button:hover { background-color: var(--accent1); color: var(--bg-color); }
+
+    .add-new-button {
+        border-color: var(--accent2);
+        color: var(--accent2);
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-family: var(--font-title);
+        font-weight: 700;
+    }
+    .add-new-button:hover {
+        background-color: var(--accent2);
+        color: var(--bg-color);
+        box-shadow: 0 0 10px var(--accent2);
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="admin-header">
+        <h1>[ÁREA RESTRITA] // CONSOLE MESTRE</h1>
+        <a th:href="@{/logout}" class="logout-button">ENCERRAR SESSÃO</a>
+    </div>
+
+    <div class="admin-content">
+        
+        <p style="color: var(--accent2); margin-bottom: 25px;">
+            <span th:text="'USUÁRIO CONECTADO: ' + ${usuarioLogado}"></span>
+            <span style="color: var(--accent1);"> // NÍVEL DE ACESSO: ADMINISTRADOR</span>
+        </p>
+
+        <div class="action-bar">
+            <a href="/novo-item" class="action-button add-new-button">
+                + ADICIONAR NOVO ITEM
+            </a>
+        </div>
+        
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME DO ITEM</th>
+                    <th>STATUS</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>MADAME SATÃ - R. CONSELHEIRO RAMALHO</td>
+                    <td style="color: #ffaa00;">PENDENTE</td>
+                    <td>
+                        <a href="/editar/1" class="action-button edit-button">EDITAR (U)</a>
+                        <form th:action="@{/excluir/1}" method="post" style="display: inline;">
+                            <button type="submit" class="action-button delete-button">EXCLUIR (D)</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>ZIG 1E2 - R. ARAÚJO</td>
+                    <td style="color: var(--accent2);">ATIVO</td>
+                    <td>
+                        <a href="/editar/2" class="action-button edit-button">EDITAR (U)</a>
+                        <form th:action="@{/excluir/2}" method="post" style="display: inline;">
+                            <button type="submit" class="action-button delete-button">EXCLUIR (D)</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

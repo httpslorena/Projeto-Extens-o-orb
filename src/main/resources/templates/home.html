@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — Console de Eventos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    
+    <div th:if="${mensagemBoasVindas}" class="sistema-alerta">
+        <span th:text="${mensagemBoasVindas}"></span>
+    </div>
+
+    <div class="content-layout">
+        
+        <div class="feed-container">
+            <h1 class="main-title">
+                <span class="o-grad">Ø</span>RB LOGS: BOATES UNDERGROUND SP
+            </h1>
+            
+            <div class="feed-post">
+                <div class="meta-info"> Madame Satã</div>
+                <img src="/img/madame.jpg" alt="Imagem: Madame" class="feed-image">
+                <h2>MADAME SATÃ</h2>
+                <p class="data-value">
+                    Ambiente focado em música os sets passeiam pelos gêneros new wave, darkwave e synth-pop, até composições do rock nacional, punk rock e pós-punk.
+                    Endereço: R. Conselheiro Ramalho, 873 - Bela Vista, São Paulo - SP, 01325-001
+                </p>
+            </div>
+            
+            <div class="feed-post">
+                <div class="meta-info">ZIG 002</div>
+                <img src="/img/zig.jpg" alt="Imagem: ZIG" class="feed-image">
+                <h2>ZIG1E2</h2>
+                <p class="data-value">
+                    A rede “ZIG” oferece duas frentes distintas em São Paulo que se complementam: o ZIG Duplex funciona como um bar + subsolo de pista mais acessível, ideal para chegar cedo, curtir o drink e a pista agitada; o ZIG Studio é mais voltado para shows ou nights especializadas, techno/tribal/funk, com estrutura maior. Ambas casas se posicionam como ícones da cena noturna moderna de São Paulo, com programações que já chamaram atenção internacional (como Arca e Charli XCX ) e com forte presença no cenário LGBTQ+ e de música alternativa.
+                    Endereço: R. Araújo, 155 - República, São Paulo - SP, 01220-020 e av. pacaembu, 33
+                </p>
+            </div>
+
+            <div class="feed-post">
+                <div class="meta-info">MAMBA 003</div>
+                <img src="/img/mamba.jpg" alt="Imagem: Mamba" class="feed-image">
+                <h2>MAMBA NEGRA (BARRA FUNDA)</h2>
+                <p class="data-value">
+                    Um dos maiores coletivos de música eletrônica da cidade, conhecido por festas itinerantes e grande público, focado em house e techno.
+                </p>
+            </div>
+
+            <div class="info-link-container">
+                <a href="/sobre" class="tech-button">INFORMAÇÕES DO PROJETO</a>
+            </div>
+                <a th:href="@{/usuarios}" class="tech-button primary" style="margin-top: 2rem;">
+    ACESSAR MATRIZ DE USUÁRIOS
+</a>
+        </div>
+
+
+
+    <div class="sidebar-panel" style="text-align: center;">
+
+    <div class="meta-info header-info" style="margin-bottom: 2rem;">
+        ACESSO E FUNÇÕES
+    </div>
+
+    <!-- Saudação -->
+    <p class="meta-info" style="color: var(--accent1); margin-bottom: 2rem;">
+        BEM-VINDO, <span sec:authentication="name"></span>!
+    </p>
+
+    <!-- Botões -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <a href="/login" class="tech-button primary" 
+           style="width: 220px; text-align: center;">
+            INICIAR SESSÃO (LOGIN)
+        </a>
+
+        <div sec:authorize="isAuthenticated()">
+            <form th:action="@{/logout}" method="post" style="margin: 0;">
+                <button type="submit" class="tech-button logout-button" 
+                        style="width: 220px; text-align: center;">
+                    ENCERRAR SESSÃO
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — Editar Usuário</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <style>
+        .form-panel { 
+            max-width: 500px; 
+        }
+        .form-panel h1 {
+            color: var(--accent1, #ff00ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-layout">
+        <div class="form-panel">
+            
+            <h1 class="main-title">
+                EDITAR REGISTRO <span class="o-grad">[USUÁRIO ID: <span th:text="${usuario.id}">00</span>]</span>
+            </h1>
+            <p class="subtitle">Atualize os dados e confirme a modificação na Matriz Ørb.</p>
+
+            <form th:action="@{/usuarios/atualizar/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+                
+                <input type="hidden" th:field="*{id}" />
+
+                <label for="username">Nome de Usuário</label>
+                <input type="text" id="username" th:field="*{username}" placeholder="Nome de Usuário" required />
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" th:field="*{email}" placeholder="Email" required />
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" th:field="*{telefone}" placeholder="Telefone" />
+
+                <label for="password">Nova Senha (Deixe em branco para não alterar)</label>
+                <input type="password" id="password" th:field="*{password}" placeholder="Nova Senha" />
+
+                <button type="submit" class="tech-button primary">SALVAR ALTERAÇÕES</button>
+            </form>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="/usuarios" class="tech-button">VOLTAR À MATRIZ</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

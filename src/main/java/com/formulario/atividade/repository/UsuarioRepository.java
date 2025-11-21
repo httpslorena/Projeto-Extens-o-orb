@@ -1,0 +1,11 @@
+package com.formulario.atividade.repository;
+
+import com.formulario.atividade.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional; 
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+    
+    // MÉTODO CORRETO: Busca o usuário pelo campo 'username' (ou 'login') na Entity Usuario
+    Optional<Usuario> findByUsername(String username);
+}

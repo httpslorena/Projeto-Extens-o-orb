@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — Cadastro de Usuário</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Estilos Básicos de Fundo e Fonte */
+    :root {
+        --bg-color: #000000;
+        --form-bg: #111111;
+        --border-color: #333333;
+        --accent1: #ff00ff; /* Magenta */
+        --accent2: #00ffcc; /* Ciano */
+        --text-primary: #ffffff;
+        --font-title: 'Orbitron', sans-serif;
+        --font-body: 'Rajdhani', sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: var(--font-body), sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .register-container {
+        width: 100%;
+        max-width: 450px;
+        padding: 40px;
+        background-color: var(--form-bg);
+        border: 2px solid var(--accent2);
+        box-shadow: 0 0 20px var(--accent2);
+        text-align: center;
+        transform: perspective(1px) translateZ(0); 
+    }
+
+    h1 {
+        font-family: var(--font-title);
+        color: var(--accent1);
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        text-shadow: 0 0 5px var(--accent1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent2);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #0a0a0a;
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        font-size: 1rem;
+        font-family: var(--font-body);
+        box-sizing: border-box;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: var(--accent2);
+        box-shadow: 0 0 5px var(--accent2);
+        outline: none;
+    }
+    
+    .tech-button {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        border: 2px solid var(--accent2);
+        color: var(--accent2);
+        background-color: transparent;
+        text-transform: uppercase;
+        font-family: var(--font-title);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 30px;
+    }
+
+    .tech-button:hover {
+        background-color: var(--accent2);
+        color: var(--bg-color);
+        box-shadow: 0 0 15px var(--accent2);
+    }
+
+    .message-error {
+        color: var(--accent1);
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .message-success {
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .login-link {
+        display: block;
+        margin-top: 20px;
+        color: var(--accent1);
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .login-link:hover {
+        color: var(--accent2);
+    }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>CADASTRO // NOVA CONTA</h1>
+        
+        <div th:if="${cadastroErro}" class="message-error">
+            [ERRO] <span th:text="${cadastroErro}"></span>
+        </div>
+
+        <!-- 💥 FORMULÁRIO COMPLETO COM O CAMPO EMAIL -->
+        <form th:action="@{/cadastrar}" th:object="${usuario}" method="post">
+            
+            <!-- Campo Username -->
+            <div class="form-group">
+                <label for="username">Nome de Usuário</label>
+                <input type="text" 
+                       id="username" 
+                       th:field="*{username}" 
+                       placeholder="Digite seu username"
+                       required />
+            </div>
+
+            <!-- 💥 NOVO CAMPO EMAIL -->
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" 
+                       id="email" 
+                       th:field="*{email}" 
+                       placeholder="seu@email.com"
+                       required />
+            </div>
+
+            <!-- Campo Password -->
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" 
+                       id="password" 
+                       th:field="*{password}" 
+                       placeholder="Digite sua senha"
+                       required />
+            </div>
+
+            <!-- Botão de Submit -->
+            <button type="submit" class="tech-button">
+                INICIAR CADASTRO
+            </button>
+        </form>
+
+        <!-- Link para Login -->
+        <a th:href="@{/login}" class="login-link">
+            Já tem uma conta? Faça login aqui →
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — Sobre o Projeto</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <style>
+        /* Estilo específico para o conteúdo do Sobre */
+        .sobre-content {
+            padding: 4rem;
+            max-width: 800px; /* Aumentei a largura máxima para o texto */
+            text-align: left;
+            margin: auto;
+        }
+        .sobre-content h2 {
+            color: var(--accent1);
+            font-family: var(--font-title);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-screen-center">
+        
+        <div class="login-panel sobre-content" style="width: 850px;">
+            
+            <h1 class="main-title" style="font-size: 3rem; text-align: left;">
+                <span class="o-grad">Ø</span>RB | PROTOCOLO 7.1.B
+            </h1>
+
+            <p class="meta-info" style="text-align: left; margin-bottom: 2rem;">
+              Oi! Eu sou a Lorena, estou no 1º semestre de Sistemas de Informação, Turma A, período Noturno (porque de dia eu funciono só no modo economia de energia).
+Estou começando minha jornada na tecnologia e tentando não surtar com tantos códigos — mas seguimos firmes!
+            </p>
+            
+            <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 2rem;">
+                
+                <h2>DESCRIÇÃO DO PROJETO</h2>
+                
+                <p class="data-point" style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.6;">
+                    Este é um projeto acadêmico de demonstração de uma aplicação web 
+                    completa (Full Stack) utilizando a estrutura **Spring Boot** com Java. 
+                    O principal objetivo é aplicar os conceitos de persistência de dados 
+                    através do **JPA/Hibernate** para comunicação com o **MySQL**, 
+                    enquanto a interface é renderizada pelo **Thymeleaf** e a segurança 
+                    é gerenciada pelo **Spring Security**.
+                </p>
+
+                <h2 style="margin-top: 3rem;">DESENVOLVEDOR:</h2>
+                <div class="data-point">
+                    <span class="data-label" style="color: var(--accent2); margin-right: 10px;">AGENT:</span>
+                    <span class="data-value" style="color: var(--accent1); font-weight: bold;">[Lorena]</span>
+                </div>
+                
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="/" class="tech-button primary" style="text-decoration: none; width: 300px;">VOLTAR AO CONSOLE PRINCIPAL</a>
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+</html>

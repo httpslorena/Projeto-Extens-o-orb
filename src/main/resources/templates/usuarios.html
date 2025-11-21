@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ørb — Matriz de Usuários</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <style>
+        /* ESTILO DA TABELA */
+        .table-container { 
+            padding: 40px; 
+            max-width: 1200px; 
+            margin: auto; 
+            background-color: var(--panel-bg, #111111); 
+            border: 1px solid var(--border-color, #333333); 
+        }
+        
+        .panel-center {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px 40px 20px;
+        }
+
+        .user-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 2rem; 
+        }
+        .user-table th, .user-table td {
+            border: 1px solid var(--border-color, #333333); 
+            padding: 0.8rem;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--text-primary, #ffffff);
+        }
+        .user-table th {
+            background-color: #1a1a1a;
+            color: var(--accent1, #ff00ff); 
+            text-transform: uppercase;
+            font-family: var(--font-title, 'Orbitron');
+        }
+        
+        .user-table tr:nth-child(even) {
+            background-color: #0d0d0d;
+        }
+
+        /* Estilo para botões de ação na tabela */
+        .tech-button.small {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.7rem;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px; 
+        }
+        .action-edit {
+            background-color: var(--accent1, #ff00ff);
+        }
+        .action-delete {
+            background-color: #cc3333; 
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-center">
+        <div class="table-container">
+            <h1 class="main-title" style="font-size: 3rem; text-align: left; color: var(--accent2);">
+                MATRIZ DE DADOS <span class="o-grad">[USUÁRIOS]</span>
+            </h1>
+            
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome de Usuário</th>
+                        <th>Email</th>
+                        <th>Ações</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${listaUsuarios}">
+                        <td th:text="${usuario.id}">001</td>
+                        <td th:text="${usuario.username}">usuario_exemplo</td>
+                        <td th:text="${usuario.email ?: 'N/A'}">email@exemplo.com</td>
+                        <td>
+                            <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}" 
+                                class="tech-button small action-edit">
+                                EDITAR
+                            </a>
+                            
+                            <a th:href="@{/usuarios/deletar/{id}(id=${usuario.id})}" 
+                                class="tech-button small action-delete"
+                                onclick="return confirm('Tem certeza que deseja DELETAR o usuário ' + '${usuario.username}' + '? Esta ação não pode ser desfeita.');">
+                                EXCLUIR
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="/cadastrar" class="tech-button primary" style="margin-right: 1rem;">NOVO REGISTRO</a>
+                
+                <a href="/" class="tech-button">VOLTAR AO CONSOLE</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

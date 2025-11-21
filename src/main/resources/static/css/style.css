@@ -1,0 +1,273 @@
+/*
+ * style.css
+ * Versão Final (Layout e Componentes)
+ */
+
+/* =======================================
+ * 0. VARIÁVEIS DE CORES E FONTES
+ * ======================================= */
+:root {
+    --panel-bg: #111111;
+    --border-color: #333333;
+    --accent1: #ff00ff; /* Magenta/Pink Neon */ 
+    --accent2: #00ffcc; /* Ciano/Menta Neon */ 
+    --text-secondary: #aaaaaa;
+    --text-primary: #ffffff; 
+    
+    /* VARIÁVEIS DE FONTES (Carregadas via <link> no HTML) */
+    --font-title: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif; 
+}
+
+/* =======================================
+ * 1. RESET E ESTILOS GLOBAIS
+ * ======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000000; 
+    color: var(--text-primary); 
+    font-family: var(--font-body), monospace; 
+    font-weight: 400; 
+}
+
+/* Cor da letra Ø */
+.o-grad {
+    color: var(--accent1); 
+}
+
+a {
+    color: var(--accent2);
+    text-decoration: none;
+}
+
+/* =======================================
+ * 2. ESTRUTURA DE LAYOUT (FLEXBOX)
+ * ======================================= */
+.content-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 50px 20px 40px 20px; 
+    gap: 40px; 
+    box-sizing: border-box;
+}
+
+/* COLUNA CENTRAL (FEED) */
+.feed-container {
+    flex-basis: 900px; 
+    flex-grow: 1; 
+    max-width: 900px;
+    padding: 2rem;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+/* COLUNA DIREITA (SIDEBAR) */
+.sidebar-panel {
+    flex-basis: 300px; 
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    max-width: 300px;
+    padding: 1.5rem;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* =======================================
+ * 3. ESTILOS DE TIPOGRAFIA
+ * ======================================= */
+.feed-container h1.main-title {
+    color: var(--accent2) !important; 
+    margin-top: 0; 
+    margin-bottom: 2rem;
+    text-align: left;
+    font-size: 4rem !important; 
+    font-weight: 700; 
+    font-family: var(--font-title); 
+}
+.feed-post h2 {
+    color: var(--accent1) !important;
+    font-family: var(--font-title); 
+    font-size: 1.8rem;
+}
+.feed-post p.data-value {
+    font-family: var(--font-body); 
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+.meta-info {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400; 
+    color: var(--text-secondary);
+}
+
+/* =======================================
+ * 4. ESTILOS DE COMPONENTES E BOTÕES
+ * ======================================= */
+.feed-post {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--accent1);
+    padding: 1.5rem;
+}
+.feed-image {
+    width: 100%; 
+    height: auto; 
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent1); 
+    box-shadow: 0 0 5px var(--accent1);
+}
+.tech-button {
+    display: block; 
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent2); 
+    color: var(--accent2);
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.tech-button:hover {
+    background-color: var(--accent2);
+    color: #000000;
+}
+.tech-button.primary {
+    border-color: var(--accent1); 
+    color: var(--accent1);
+}
+.tech-button.primary:hover {
+    background-color: var(--accent1);
+    color: #000000;
+}
+.sistema-alerta {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--accent2);
+    background-color: #0a0a0a;
+}
+.auth-section.separated {
+    border-top: 1px solid var(--border-color); 
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* =======================================
+ * 5. ESTILOS DE TELAS CENTRALIZADAS (LOGIN, CADASTRO, USUARIOS)
+ * ======================================= */
+
+/* Container para centralizar o painel verticalmente e horizontalmente */
+.full-screen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+/* Painel principal de login/cadastro/matriz */
+.login-panel {
+    padding: 40px;
+    width: 400px;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--accent2);
+    box-shadow: 0 0 10px var(--accent2);
+    text-align: center;
+}
+.login-panel h1 {
+    color: var(--accent1);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-family: var(--font-title);
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    color: var(--accent2);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+.form-group input {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #000;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.login-footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* --- NOVO BLOCO DE ESTILOS DO PAINEL LATERAL (FORA DO LOGIN-FOOTER) --- */
+
+/* 1. Estilização da Mensagem de Boas-Vindas */
+.auth-welcome {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    /* Linha divisória fina, movida para separar a área do usuário do botão de Logout */
+    border-bottom: 1px dashed var(--accent2);
+}
+
+.username-display {
+    /* Estilo do nome de usuário */
+    font-weight: 700; 
+    text-shadow: 0 0 5px var(--accent1); 
+    color: var(--accent1); /* Garante que a cor neon seja usada */
+}
+
+/* 2. Estilização do Botão de Logout (Menor e Diferente) */
+.tech-button.logout-button {
+    /* Torna o botão mais compacto */
+    padding: 8px 15px; 
+    font-size: 0.9em;
+    /* Minimalista: Fundo transparente, Borda Neon */
+    background-color: transparent; 
+    border: 1px solid var(--accent2); /* Borda ciano */
+    color: var(--accent2);
+    display: block; 
+    
+    /* Novo ajuste de margem para posicionamento */
+    margin-top: 1.5rem; 
+    margin-bottom: 0.5rem;
+}
+
+.tech-button.logout-button:hover {
+    /* Efeito neon no hover */
+    background-color: var(--accent2);
+    color: var(--panel-bg); /* Texto escuro no hover */
+    box-shadow: 0 0 8px var(--accent2);
+}
+/* 3. Ajuste para garantir que os botões grandes continuem como 'primary' */
+.tech-button.primary {
+    /* Garante que o padding seja o original para ser maior que o logout */
+    padding: 12px 20px;
+}
