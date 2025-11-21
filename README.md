@@ -89,7 +89,7 @@ Antes de executar o projeto, certifique-se de ter instalado:
 
 ### 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/projeto-orb-sistema-usuarios.git
+git clone [https://github.com/seu-usuario/projeto-orb-sistema-usuarios.git](https://github.com/httpslorena/Projeto-Extens-o-orb)](https://github.com/httpslorena/Projeto-Extens-o-orb)
 cd projeto-orb-sistema-usuarios
 ```
 
@@ -264,7 +264,7 @@ O projeto implementa as seguintes medidas de segurança:
 Estudante de Sistemas de Informação - 1º Semestre  
 📧 Email: [seu-email@exemplo.com]  
 💼 LinkedIn: [seu-linkedin]  
-🐱 GitHub: [@seu-usuario](https://github.com/seu-usuario)
+🐱 GitHub: [@httpslorena][(https://github.com/httpslorena)
 
 ---
 
