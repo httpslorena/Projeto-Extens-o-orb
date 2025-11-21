@@ -1,2 +1,288 @@
-# Projeto-Extens-o-orb
-Sistema de cadastro e gerenciamento de usuários - Spring Boot + MySQL
+# 🌐 ØRB NETWORKS - Sistema de Gerenciamento de Usuários
+
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.7-brightgreen)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+Sistema web completo de cadastro e gerenciamento de usuários desenvolvido com **Spring Boot**, **Thymeleaf**, **Spring Security** e **MySQL**.
+
+---
+
+## 📋 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação e Configuração](#instalação-e-configuração)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Usar](#como-usar)
+- [Capturas de Tela](#capturas-de-tela)
+- [Desenvolvedor](#desenvolvedor)
+
+---
+
+## 🎯 Sobre o Projeto
+
+**ØRB NETWORKS** é um projeto acadêmico full-stack desenvolvido para a disciplina de **Sistemas de Informação**. O sistema permite o cadastro, autenticação e gerenciamento de usuários, com uma interface temática cyberpunk/neon.
+
+### Objetivos do Projeto:
+- Implementar um CRUD completo
+- Aplicar conceitos de autenticação e autorização
+- Trabalhar com persistência de dados (JPA/Hibernate)
+- Desenvolver uma interface responsiva e moderna
+
+---
+
+## ⚡ Funcionalidades
+
+✅ **Cadastro de Usuários** - Registro com username, email e senha  
+✅ **Autenticação Segura** - Login com Spring Security e BCrypt  
+✅ **Gerenciamento de Usuários** - Listagem de usuários cadastrados  
+✅ **Página Inicial Pública** - Acesso sem necessidade de login  
+✅ **Área Restrita** - Acesso à lista de usuários apenas após login  
+✅ **Design Cyberpunk** - Interface moderna com tema neon  
+✅ **Persistência de Dados** - MySQL com JPA/Hibernate  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Backend:
+- **Java 21**
+- **Spring Boot 3.5.7**
+  - Spring Web
+  - Spring Data JPA
+  - Spring Security
+- **MySQL 8.0**
+- **Hibernate (JPA)**
+- **BCrypt** (criptografia de senhas)
+
+### Frontend:
+- **Thymeleaf** (template engine)
+- **HTML5 / CSS3**
+- **JavaScript**
+- **Google Fonts** (Orbitron, Rajdhani)
+
+### Ferramentas:
+- **Maven** (gerenciamento de dependências)
+- **VSCode** (IDE)
+- **MySQL Workbench**
+- **Git / GitHub**
+
+---
+
+## 📦 Pré-requisitos
+
+Antes de executar o projeto, certifique-se de ter instalado:
+
+- **Java JDK 21** ou superior
+- **Maven 3.8+**
+- **MySQL 8.0+**
+- **IDE** (VSCode, IntelliJ IDEA, Eclipse)
+- **Git**
+
+---
+
+## 🚀 Instalação e Configuração
+
+### 1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/projeto-orb-sistema-usuarios.git
+cd projeto-orb-sistema-usuarios
+```
+
+### 2. Configure o banco de dados MySQL:
+
+**Crie o banco de dados:**
+```sql
+CREATE DATABASE projeto;
+```
+
+**Configure o `application.properties`:**
+
+Edite o arquivo `src/main/resources/application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/projeto
+spring.datasource.username=root
+spring.datasource.password=SUA_SENHA_AQUI
+spring.jpa.hibernate.ddl-auto=update
+server.port=8081
+```
+
+### 3. Execute o projeto:
+
+**Usando Maven:**
+```bash
+mvn spring-boot:run
+```
+
+**Ou compile e execute o JAR:**
+```bash
+mvn clean package
+java -jar target/atividade-0.0.1-SNAPSHOT.jar
+```
+
+### 4. Acesse no navegador:
+```
+http://localhost:8081/
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+projeto-orb/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/formulario/atividade/
+│   │   │       ├── config/
+│   │   │       │   └── SecurityConfig.java
+│   │   │       ├── controller/
+│   │   │       │   └── UsuarioController.java
+│   │   │       ├── model/
+│   │   │       │   └── Usuario.java
+│   │   │       ├── repository/
+│   │   │       │   └── UsuarioRepository.java
+│   │   │       ├── service/
+│   │   │       │   ├── UsuarioService.java
+│   │   │       │   └── DetalhesUsuarioService.java
+│   │   │       └── AtividadeApplication.java
+│   │   │
+│   │   └── resources/
+│   │       ├── templates/
+│   │       │   ├── home.html
+│   │       │   ├── login.html
+│   │       │   ├── cadastrar.html
+│   │       │   ├── usuarios.html
+│   │       │   └── sobre.html
+│   │       ├── static/
+│   │       │   ├── css/
+│   │       │   └── img/
+│   │       └── application.properties
+│
+├── pom.xml
+└── README.md
+```
+
+---
+
+## 💻 Como Usar
+
+### 1. **Página Inicial (Home)**
+- Acesse `http://localhost:8081/`
+- Visualize informações sobre boates underground de SP
+- Escolha entre fazer login ou cadastrar
+
+### 2. **Cadastrar Novo Usuário**
+- Clique em "CRIAR CONTA / CADASTRAR"
+- Preencha: Username, Email e Senha
+- Clique em "INICIAR CADASTRO"
+
+### 3. **Fazer Login**
+- Clique em "INICIAR SESSÃO (LOGIN)"
+- Entre com seu Username e Senha
+- Após login, você será redirecionado para a home
+
+### 4. **Acessar Lista de Usuários**
+- **Após estar logado**, clique em "ACESSAR MATRIZ DE USUÁRIOS"
+- Visualize todos os usuários cadastrados
+- (Funcionalidades de Editar/Excluir podem ser implementadas)
+
+### 5. **Sobre o Projeto**
+- Clique em "INFORMAÇÕES DO PROJETO"
+- Veja detalhes técnicos e informações do desenvolvedor
+
+---
+
+## 📸 Capturas de Tela
+
+### Página Inicial (Home)
+*Interface principal com tema cyberpunk/neon*
+
+### Login
+*Tela de autenticação segura*
+
+### Cadastro
+*Formulário de registro com validação*
+
+### Lista de Usuários
+*Matriz de dados com todos os usuários cadastrados*
+
+---
+
+## 🔐 Segurança
+
+O projeto implementa as seguintes medidas de segurança:
+
+✅ **Senhas criptografadas** com BCrypt  
+✅ **Autenticação** via Spring Security  
+✅ **Rotas protegidas** - `/usuarios` requer autenticação  
+✅ **Validação de dados** no frontend e backend  
+✅ **Proteção contra SQL Injection** (JPA/Hibernate)  
+
+---
+
+## 🎓 Contexto Acadêmico
+
+**Disciplina:** Sistemas de Informação  
+**Período:** 1º Semestre - Noturno  
+**Turma:** A  
+**Ano:** 2025  
+
+### Conceitos Aplicados:
+- Arquitetura MVC (Model-View-Controller)
+- ORM (Object-Relational Mapping) com JPA
+- Injeção de Dependências
+- Segurança de Aplicações Web
+- Persistência de Dados
+- RESTful principles
+
+---
+
+## 🚧 Melhorias Futuras
+
+- [ ] Implementar funcionalidade de Editar usuário
+- [ ] Implementar funcionalidade de Excluir usuário
+- [ ] Adicionar paginação na lista de usuários
+- [ ] Implementar recuperação de senha
+- [ ] Adicionar validação de email (confirmação)
+- [ ] Sistema de roles (ADMIN, USER)
+- [ ] Dashboard com estatísticas
+- [ ] API RESTful documentada com Swagger
+
+---
+
+## 👤 Desenvolvedor
+
+**Lorena**  
+Estudante de Sistemas de Informação - 1º Semestre  
+📧 Email: [seu-email@exemplo.com]  
+💼 LinkedIn: [seu-linkedin]  
+🐱 GitHub: [@seu-usuario](https://github.com/seu-usuario)
+
+---
+
+## 📄 Licença
+
+Este projeto é um trabalho acadêmico e está disponível para fins educacionais.
+
+---
+
+## 🙏 Agradecimentos
+
+- Professores e colegas da turma de Sistemas de Informação
+- Comunidade Spring Boot
+- Documentação oficial do Spring Framework
+- Stack Overflow e comunidades de desenvolvedores
+
+---
+
+**ØRB NETWORKS | COPYRIGHT 2025 | PROTOCOL 7.1.A**
+
+*"Explorando o futuro da tecnologia, uma linha de código por vez."* 🚀
