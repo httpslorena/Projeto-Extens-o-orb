@@ -90,10 +90,8 @@
                         <td th:text="${usuario.username}">usuario_exemplo</td>
                         <td th:text="${usuario.email ?: 'N/A'}">email@exemplo.com</td>
                         <td>
-                            <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}" 
-                                class="tech-button small action-edit">
-                                EDITAR
-                            </a>
+                        
+                        
                             
                             <a th:href="@{/usuarios/deletar/{id}(id=${usuario.id})}" 
                                 class="tech-button small action-delete"

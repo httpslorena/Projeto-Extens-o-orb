@@ -5,9 +5,7 @@ import com.formulario.atividade.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UsuarioController {
@@ -20,19 +18,16 @@ public class UsuarioController {
         return "redirect:/home";
     }
 
-    // GET: Página home (pública - não precisa de login)
     @GetMapping("/home")
     public String showHome() {
         return "home";
     }
 
-    // GET: Exibe a página de login
     @GetMapping("/login")
     public String showLoginPage() {
         return "login";
     }
 
-  
     @GetMapping("/sobre")
     public String showAbout() {
         return "sobre";
@@ -43,7 +38,6 @@ public class UsuarioController {
         model.addAttribute("usuario", new Usuario());
         return "cadastrar";
     }
-
 
     @PostMapping("/cadastrar")
     public String registerUser(@ModelAttribute Usuario usuario, Model model) {
@@ -56,11 +50,42 @@ public class UsuarioController {
             return "cadastrar";
         }
     }
-    
-  
+
     @GetMapping("/usuarios")
     public String listUsers(Model model) {
         model.addAttribute("listaUsuarios", usuarioService.listarUsuarios());
         return "usuarios";
+    }
+
+  
+    
+    @GetMapping("/usuarios/deletar/{id}")
+    public String deletarUsuarioGet(@PathVariable("id") Long id) {
+        try {
+            usuarioService.deletarUsuario(id);
+        } catch (Exception e) {
+            System.out.println("Erro ao deletar usuário: " + e.getMessage());
+        }
+        return "redirect:/usuarios";
+    }
+    
+    @PostMapping("/usuarios/deletar/{id}")
+    public String deletarUsuarioPost(@PathVariable("id") Long id) {
+        try {
+            usuarioService.deletarUsuario(id);
+        } catch (Exception e) {
+            System.out.println("Erro ao deletar usuário: " + e.getMessage());
+        }
+        return "redirect:/usuarios";
+    }
+    
+    @DeleteMapping("/usuarios/deletar/{id}")
+    public String deletarUsuarioDelete(@PathVariable("id") Long id) {
+        try {
+            usuarioService.deletarUsuario(id);
+        } catch (Exception e) {
+            System.out.println("Erro ao deletar usuário: " + e.getMessage());
+        }
+        return "redirect:/usuarios";
     }
 }
