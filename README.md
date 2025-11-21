@@ -89,8 +89,7 @@ Antes de executar o projeto, certifique-se de ter instalado:
 
 ### 1. Clone o repositório:
 ```bash
-git clone [https://github.com/seu-usuario/projeto-orb-sistema-usuarios.git](https://github.com/httpslorena/Projeto-Extens-o-orb)](https://github.com/httpslorena/Projeto-Extens-o-orb)
-cd projeto-orb-sistema-usuarios
+git clone [https://github.com/httpslorena/Projeto-Extens-o-orb]
 ```
 
 ### 2. Configure o banco de dados MySQL:
