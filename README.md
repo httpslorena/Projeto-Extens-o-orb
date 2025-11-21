@@ -191,7 +191,7 @@ projeto-orb/
 ### 4. **Acessar Lista de Usuários**
 - **Após estar logado**, clique em "ACESSAR MATRIZ DE USUÁRIOS"
 - Visualize todos os usuários cadastrados
-- (Funcionalidades de Editar/Excluir podem ser implementadas)
+- (Funcionalidade de Excluir pode ser implementada)
 
 ### 5. **Sobre o Projeto**
 - Clique em "INFORMAÇÕES DO PROJETO"
@@ -261,8 +261,7 @@ O projeto implementa as seguintes medidas de segurança:
 
 **Lorena**  
 Estudante de Sistemas de Informação - 1º Semestre  
-📧 Email: [seu-email@exemplo.com]  
-💼 LinkedIn: [seu-linkedin]  
+📧 Email: [lorena.alves.pereira@uni9.edu.br]  
 🐱 GitHub: [@httpslorena][(https://github.com/httpslorena)
 
 ---
