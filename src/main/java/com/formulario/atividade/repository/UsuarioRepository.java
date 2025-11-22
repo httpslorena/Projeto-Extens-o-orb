@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     
-    // MÉTODO CORRETO: Busca o usuário pelo campo 'username' (ou 'login') na Entity Usuario
+    
     Optional<Usuario> findByUsername(String username);
 }
