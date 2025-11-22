@@ -148,43 +148,46 @@ http://localhost:8081/
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
+📁 Estrutura do Projeto
 projeto-orb/
 │
 ├── src/
 │   ├── main/
-│   │   ├── java/
-│   │   │   └── com/formulario/atividade/
-│   │   │       ├── config/
-│   │   │       │   └── SecurityConfig.java
-│   │   │       ├── controller/
-│   │   │       │   └── UsuarioController.java
-│   │   │       ├── model/
-│   │   │       │   └── Usuario.java
-│   │   │       ├── repository/
-│   │   │       │   └── UsuarioRepository.java
-│   │   │       ├── service/
-│   │   │       │   ├── UsuarioService.java
-│   │   │       │   └── DetalhesUsuarioService.java
-│   │   │       └── AtividadeApplication.java
+│   │   ├── java/com/formulario/atividade/
+│   │   │   ├── config/
+│   │   │   │   └── SecurityConfig.java
+│   │   │   ├── controller/
+│   │   │   │   └── UsuarioController.java
+│   │   │   ├── model/
+│   │   │   │   └── Usuario.java
+│   │   │   ├── repository/
+│   │   │   │   └── UsuarioRepository.java
+│   │   │   ├── service/
+│   │   │   │   ├── DetalhesUsuarioService.java
+│   │   │   │   └── UsuarioService.java
+│   │   │   └── AtividadeApplication.java
 │   │   │
 │   │   └── resources/
-│   │       ├── templates/
-│   │       │   ├── home.html
-│   │       │   ├── login.html
-│   │       │   ├── cadastrar.html
-│   │       │   ├── usuarios.html
-│   │       │   └── sobre.html
 │   │       ├── static/
 │   │       │   ├── css/
+│   │       │   │   └── style.css
 │   │       │   └── img/
+│   │       │       ├── madame.jpg
+│   │       │       ├── mamba.jpg
+│   │       │       └── zig.jpg
+│   │       ├── templates/
+│   │       │   ├── admin_painel.html
+│   │       │   ├── cadastrar.html
+│   │       │   ├── home.html
+│   │       │   ├── login.html
+│   │       │   ├── sobre.html
+│   │       │   └── usuarios.html
 │   │       └── application.properties
+│   │
+│   └── test/
 │
 ├── pom.xml
 └── README.md
-```
 
 ---
 
