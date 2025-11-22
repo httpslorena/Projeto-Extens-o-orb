@@ -12,6 +12,7 @@ Sistema web completo de cadastro e gerenciamento de usuários desenvolvido com *
 ## 📋 Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
+- [Vídeo de Demonstração](#vídeo-de-demonstração)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Pré-requisitos](#pré-requisitos)
@@ -35,11 +36,27 @@ Sistema web completo de cadastro e gerenciamento de usuários desenvolvido com *
 
 ---
 
+## 🎥 Vídeo de Demonstração
+
+**Assista à demonstração completa do projeto:**  
+[![Vídeo de Demonstração](https://img.shields.io/badge/YouTube-Assistir%20Demonstração-red?style=for-the-badge&logo=youtube)](https://youtu.be/5JpoE52Nw38)
+
+**Link direto:** https://youtu.be/5JpoE52Nw38
+
+> **No vídeo você verá:**
+> - ✅ Sistema de autenticação e login
+> - ✅ Área restrita e controle de acesso
+> - ✅ CRUD completo de usuários (criar, listar, deletar)
+> - ✅ Integração com banco de dados MySQL
+> - ✅ Todas as funcionalidades em ação
+
+---
+
 ## ⚡ Funcionalidades
 
 ✅ **Cadastro de Usuários** - Registro com username, email e senha  
 ✅ **Autenticação Segura** - Login com Spring Security e BCrypt  
-✅ **Gerenciamento de Usuários** - Listagem de usuários cadastrados  
+✅ **Gerenciamento de Usuários** - Listagem e exclusão de usuários cadastrados  
 ✅ **Página Inicial Pública** - Acesso sem necessidade de login  
 ✅ **Área Restrita** - Acesso à lista de usuários apenas após login  
 ✅ **Design Cyberpunk** - Interface moderna com tema neon  
@@ -89,7 +106,7 @@ Antes de executar o projeto, certifique-se de ter instalado:
 
 ### 1. Clone o repositório:
 ```bash
-git clone [https://github.com/httpslorena/Projeto-Extens-o-orb]
+git clone https://github.com/httpslorena/Projeto-Extens-o-orb.git
 ```
 
 ### 2. Configure o banco de dados MySQL:
@@ -191,7 +208,7 @@ projeto-orb/
 ### 4. **Acessar Lista de Usuários**
 - **Após estar logado**, clique em "ACESSAR MATRIZ DE USUÁRIOS"
 - Visualize todos os usuários cadastrados
-- (Funcionalidade de Excluir pode ser implementada)
+- Utilize o botão "EXCLUIR" para remover usuários
 
 ### 5. **Sobre o Projeto**
 - Clique em "INFORMAÇÕES DO PROJETO"
@@ -247,7 +264,6 @@ O projeto implementa as seguintes medidas de segurança:
 ## 🚧 Melhorias Futuras
 
 - [ ] Implementar funcionalidade de Editar usuário
-- [ ] Implementar funcionalidade de Excluir usuário
 - [ ] Adicionar paginação na lista de usuários
 - [ ] Implementar recuperação de senha
 - [ ] Adicionar validação de email (confirmação)
@@ -261,8 +277,8 @@ O projeto implementa as seguintes medidas de segurança:
 
 **Lorena**  
 Estudante de Sistemas de Informação - 1º Semestre  
-📧 Email: [lorena.alves.pereira@uni9.edu.br]  
-🐱 GitHub: [@httpslorena][(https://github.com/httpslorena)
+📧 Email: lorena.alves.pereira@uni9.edu.br  
+🐱 GitHub: [@httpslorena](https://github.com/httpslorena)
 
 ---
 
