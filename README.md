@@ -148,7 +148,9 @@ http://localhost:8081/
 
 ---
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
+
+```
 projeto-orb/
 │
 ├── src/
@@ -188,6 +190,7 @@ projeto-orb/
 │
 ├── pom.xml
 └── README.md
+```
 
 ---
 
@@ -219,6 +222,27 @@ projeto-orb/
 
 ---
 
+## 📸 Capturas de Tela
+
+> **💡 Dica:** Para adicionar suas próprias imagens, tire prints das telas e salve na pasta `img/` do projeto.
+
+### Página Inicial (Home)
+![Página Home](img/home.png)
+*Interface principal com tema cyberpunk/neon e informações sobre boates underground*
+
+### Login
+![Tela de Login](img/login.png)
+*Tela de autenticação segura com Spring Security*
+
+### Cadastro
+![Formulário de Cadastro](img/cadastro.png)
+*Formulário de registro com validação de dados e criptografia de senha*
+
+### Lista de Usuários
+![Matriz de Usuários](img/usuarios.png)
+*Matriz de dados com todos os usuários cadastrados e opção de exclusão*
+
+---
 
 ## 🔐 Segurança
 
@@ -277,6 +301,8 @@ Este projeto é um trabalho acadêmico e está disponível para fins educacionai
 ---
 
 
+
+---
 
 **ØRB NETWORKS | COPYRIGHT 2025 | PROTOCOL 7.1.A**
 
