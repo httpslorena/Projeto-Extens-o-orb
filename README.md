@@ -46,7 +46,7 @@ Sistema web completo de cadastro e gerenciamento de usuários desenvolvido com *
 > **No vídeo você verá:**
 > - ✅ Sistema de autenticação e login
 > - ✅ Área restrita e controle de acesso
-> - ✅ CRUD completo de usuários (criar, listar, deletar)
+> - ✅ CRUD de usuários (deletar)
 > - ✅ Integração com banco de dados MySQL
 > - ✅ Todas as funcionalidades em ação
 
@@ -288,14 +288,7 @@ Este projeto é um trabalho acadêmico e está disponível para fins educacionai
 
 ---
 
-## 🙏 Agradecimentos
 
-- Professores e colegas da turma de Sistemas de Informação
-- Comunidade Spring Boot
-- Documentação oficial do Spring Framework
-- Stack Overflow e comunidades de desenvolvedores
-
----
 
 **ØRB NETWORKS | COPYRIGHT 2025 | PROTOCOL 7.1.A**
 
