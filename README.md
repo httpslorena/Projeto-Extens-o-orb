@@ -216,21 +216,6 @@ projeto-orb/
 
 ---
 
-## 📸 Capturas de Tela
-
-### Página Inicial (Home)
-*Interface principal com tema cyberpunk/neon*
-
-### Login
-*Tela de autenticação segura*
-
-### Cadastro
-*Formulário de registro com validação*
-
-### Lista de Usuários
-*Matriz de dados com todos os usuários cadastrados*
-
----
 
 ## 🔐 Segurança
 
